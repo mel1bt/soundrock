@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="UTF-8">
-	<title>SoundRock</title>
-	<meta charset="utf-8">
+  <meta charset="UTF-8">
+  <title>SoundRock</title>
+  <meta charset="utf-8">
     <meta name="google-signin-client_id" content="766741656408-mrga8qcbiu2tqbcog11uu1smqpk3jf57.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/client:platform.js?onload=renderButton" async defer></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,49 +30,6 @@
     <link rel="shortcut icon" type="img/png" href="img/icon.png">
     <link rel="stylesheet" href="fonts/sample.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <script>
-      // cargamos el sdk de forma asincrónica
-      (function(d){
-         var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement('script'); js.id = id; js.async = true;
-         js.src = "//connect.facebook.net/en_US/all.js";
-         ref.parentNode.insertBefore(js, ref);
-       }(document));
- 
-     // Iniciamos el sdk y su configuración
-      window.fbAsyncInit = function() {
-         FB.init({
-          appId      : '1597812100526722', //la appid de tu aplicación facebook
-          status   : true,
-      cookie   : true,
-      xfbml    : true,
-      oauth    : true //enables OAuth 2.0
-        });
- 
-        //manejador para comprobar si el status del usuario ha cambiado o no 
-        FB.Event.subscribe('auth.statusChange', function(response) {
-          if (response.authResponse) {
-            //si el usuario es logueado correctamente le saludamos
-            FB.api('/me', function(me){
-              if (me.name) {
-                document.getElementById('saludo').innerHTML = me.name;
-                document.getElementById('foto').innerHTML = 
-                '<img src="https://graph.facebook.com/' + me.id + '/picture">';
-              }
-            })
-          } else {
-            //si el usuario no tiene permiso porque ha cerrado sesión o simplemente
-            //no tiene permisos de la aplicación redirigimos al login
-            window.location = "index.html";
-          }
-        });
-    //al pulsar en salir cerramos sesión y mandamos al inicio
-        document.getElementById('salir').addEventListener('click', function(){
-          FB.logout();
-        }); 
-      } 
-    </script>
 </head>
 <body>
   <header >
