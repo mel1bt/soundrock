@@ -3,7 +3,6 @@ function onSuccess(googleUser) {
             var profileHTML = '<div class="profile"><div class="head">Welcome '+profile.getGivenName()+'! <a href="javascript:void(0);" onclick="signOut();">Sign out</a></div>';
             profileHTML += '<img src="'+profile.getImageUrl()+'"/><div class="proDetails"><p>'+profile.getName()+'</p><p>'+
             profile.getEmail()+'</p></div></div>';
-            console.log("hola mundo !!!" + profile.getGivenName());
             $('.userContent').html(profileHTML);
 		}
 		function onFailure(error) {
