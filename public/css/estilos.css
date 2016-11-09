@@ -1,0 +1,39 @@
+.cover {
+    width: 200px;
+    height: 200px;
+    margin: 10px 20px;
+    display: inline-block;
+    background-size: cover;  
+    
+}
+
+.nombre {
+	text-align: center;
+	width: 180px;
+    display: inline-block;
+}
+
+.cover:hover {
+    cursor: pointer;
+}
+
+.cover.playing {
+    border: 12px solid rgb(216,74,229);    
+}
+
+#resultados {
+    padding-left: 5%;
+    color: #000;
+    margin: 0 auto;
+}
+
+#login, #loggedin {
+        display: none;
+}
+
+.text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 500px;
+}

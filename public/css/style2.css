@@ -1,0 +1,95 @@
+/* fixed social*/
+#fixed-social {
+  position: fixed;
+  top: 250px;
+  right: 0;
+  z-index: 10;
+}
+#fixed-social a {
+  color: #fff;
+  display: block;
+  height: 40px;
+  position: relative;
+  text-align: center;
+  width: 40px;
+  margin-bottom: 1px;
+  z-index: 2;
+}
+#fixed-social a:hover>span{
+	visibility: visible;
+  right: 41px;
+  opacity: 1;
+} 
+#fixed-social a span {
+	line-height: 40px;
+  right: 60px;
+  position: absolute;
+  text-align: center;
+  width: 120px;
+  visibility: hidden;
+  transition-duration: 0.5s;
+  z-index: 1;
+  opacity: 0;
+}
+.fixed-facebook{
+	background-color: #3B5998;
+  background-image: url('http://srulad.org/codepen/images/Facebook.png');
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.fixed-facebook span{
+background-color: #3B5998;
+}
+.fixed-twitter{
+  background-color: #32CDFD;
+  background-image: url('http://srulad.org/codepen/images/Twitter.png');
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.fixed-twitter span{
+	background-color: #32CDFD;
+}
+.fixed-gplus{
+background-color: #DE4E43;
+  background-image: url('http://srulad.org/codepen/images/Google%20Plus.png');
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.fixed-gplus span{
+	background-color: #DE4E43;
+}
+.fixed-instagrem{
+  background-color: #D02E91;
+  background-image: url('http://srulad.org/codepen/images/Instagram.png');
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.fixed-instagrem span{
+	background-color: #D02E91;
+}
+.fixed-tumblr{
+background-color: #36465D;
+  background-image: url('http://srulad.org/codepen/images/Tumblr.png');
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.fixed-tumblr span{
+	background-color: #36465D;
+}
+/*end fixed social*/
+
+.uno{
+  width: 100%;
+  height: 500px;
+  background-color: gray;
+}
+.dos{
+  width: 100%;
+  height: 500px;
+  background-color: black;
+}

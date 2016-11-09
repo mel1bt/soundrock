@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>SoundRock</title>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="@rebelbase">
+    <!-- Open Graph--> 
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sacunao.github.io/soundrock/public/index.html">
+    <meta property="og:image" content="https://sacunao.github.io/soundrock/public/img/party.jpg"/>
+    <meta property="og:title" content="SOUNDROCK">
+    <meta property="og:site_name" content="Rockemos tu vida">
+    <meta property="og:description" content="Somos un equipo de personas comprometidas en brindar un servicio musical de calidad en eventos. Nuestra trayectoria de más de 20 años garantizan un servicio de calidad.">
+    <!-- twitter card--> 
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@SoundRock" />
+    <meta name="twitter:title" content="SoundRock" />
+    <meta name="twitter:description" content="Somos un equipo de personas comprometidas en brindar un servicio musical de calidad en eventos." />
+    <meta name="twitter:image" content="https://sacunao.github.io/soundrock/public/img/party.jpg" />
+    <meta name="twitter:url" content="https://sacunao.github.io/soundrock/public/index.html" />
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="shortcut icon" type="img/png" href="img/icon.png">
+    <link rel="stylesheet" href="fonts/sample.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script>
+      // cargamos el sdk de forma asincrónica
+      (function(d){
+         var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement('script'); js.id = id; js.async = true;
+         js.src = "//connect.facebook.net/en_US/all.js";
+         ref.parentNode.insertBefore(js, ref);
+       }(document));
+ 
+     // Iniciamos el sdk y su configuración
+      window.fbAsyncInit = function() {
+         FB.init({
+          appId      : '1597812100526722', //la appid de tu aplicación facebook
+          status   : true,
+      cookie   : true,
+      xfbml    : true,
+      oauth    : true //enables OAuth 2.0
+        });
+ 
+        //manejador para comprobar si el status del usuario ha cambiado o no 
+        FB.Event.subscribe('auth.statusChange', function(response) {
+          if (response.authResponse) {
+            //si el usuario es logueado correctamente le saludamos
+            FB.api('/me', function(me){
+              if (me.name) {
+                document.getElementById('saludo').innerHTML = me.name;
+                document.getElementById('foto').innerHTML = 
+                '<img src="https://graph.facebook.com/' + me.id + '/picture">';
+              }
+            })
+          } else {
+            //si el usuario no tiene permiso porque ha cerrado sesión o simplemente
+            //no tiene permisos de la aplicación redirigimos al login
+            window.location = "index.html";
+          }
+        });
+    //al pulsar en salir cerramos sesión y mandamos al inicio
+        document.getElementById('salir').addEventListener('click', function(){
+          FB.logout();
+        }); 
+      } 
+    </script>
+</head>
+<body>
+  <header >
+    <div class="container d-flex portada">
+      <img src="img/logo.png" class="logo1 img-responsive">
+    </div>
+  </header>
+  <div id="fixed-social">
+    <div><a href="https://www.facebook.com/sharer/sharer.php?u=https://sacunao.github.io/soundrock/public/index.html" class="ss fixed-facebook" target="_blank"><span>Facebook</span></a></div>
+    <div><a  href="https://twitter.com/share?url=https://sacunao.github.io/soundrock/public/index.html" class="ss fixed-twitter" target="_blank"><span>Twitter</span></a></div>
+    <div><a href="https://plus.google.com/share?url=https://sacunao.github.io/soundrock/public/index.html" class="ss fixed-gplus" target="_blank"><span>Google+</span></a></div>
+    <div><a href="https://tumblr.com/share?url=https://sacunao.github.io/soundrock/public/index.html" class="ss fixed-tumblr" target="_blank"><span>Tumblr</span></a></div>
+  </div>
+  <section class="principal container">
+    <div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-8">
+      <div class="texto-view">
+          <div style="background-color: white">
+          Hola <span id="saludo"></span>  
+          (<a href="#" id="salir">Cerrar Sesion</a>)
+          <div id="foto" ></div>
+          </div>
+          <h1 class="text-center">ARMA TU FIESTA</h1>
+          <div class="m-20">
+            <p class="lh">SOUNDROCK. Somos un equipo de personas comprometidas en brindar un servicio musical de calidad en eventos. Nuestra trayectoria  de más de  20 años  garantizan un servicio de calidad. Te aseguramos que tu evento tendrá un mix personalizado y perfecto para ti.</p>
+            <p class="lh">Arma tu lista buscando los temas de tus artistas favoritos y nosotros te armammos el mix perfecto.</p>
+          </div>
+      </div>
+    </div>  
+  </section>
+  <section>
+    <div class="djplay">
+      <div class="container">
+        <div class="col-md-3">
+          <p class="play">JUEGA A SER DJ</p>
+          <p class="play-p">Mientras nos llega tu lista juega a ser un DJ y mezcla temas preferidos</p>
+        </div>
+      </div>   
+    </div>    
+  </section>
+  <section>
+     <div class="container">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8 text-center text-share">
+                <p class="tema">TEMAS</p>
+                <p class="m-20 play-p">Escribe el nombre de tu artista y grupos preferido, escoge un tema, hazle clic una vez para escoger y otra para pausar y baja en la siguiente sección</p>
+                <form id="search-form" role="form">
+                    <div class="form-group">
+                        <input type="text" id="query" value="" class="form-control center-block" placeholder="Escribe el nombre de un Artista..."/>
+                    </div>
+                    <button type="submit" id="search" class="btn-inscribete" />Buscar</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 content-resultados d-flex">
+                <div id="resultados">                   
+                </div>
+            </div>        
+        </div>
+    </div>
+  </section>
+  <section class="container d-flex">
+    <div class="row">
+      <div id="wrapper" class="col-xs-12 col-sm-12 col-md-12">
+        <div id="content">
+          <div class="center">
+            <p id="playbutton"><img src="art/buttonPlay.png" alt="Play"/></p>
+          </div>
+          <div id="dj">
+            <div class="needle" id="needle1"></div>
+            <div class="vinyl" id="vinyl1"></div>
+            <div class="needle" id="needle2"></div>
+            <div class="vinyl" id="vinyl2"></div>
+            <div id="buttons">
+              <div id="leftbtns">
+                <div class="d-flex" id="slowbutton1"><img src="art/boton1.png" alt="Slow" /></div>
+                <div class="d-flex" id="speedbutton1"><img src="art/1.png" alt="Fast" /></div>
+              </div>
+              <div id="rightbtns">
+                  <div class="d-flex" id="slowbutton2"><img src="art/boton1.png" alt="Slow" /></div>    
+                  <div class="d-flex" id="speedbutton2"><img src="art/1.png" alt="Fast" /></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container d-flex">
+    <div class="row">
+      <div class="col-lg-12 col-xs-12 col-sm-12 col-md-12 cd-margin">
+        <div class="playbutton playbtn d-inline" data-mp3="audio/sound2.mp3">
+          <audio  class="cda"  src="" type="audio/mpeg"></audio>
+          <img src="art/cd.png" ></div>
+        <div class="playbutton playbtn d-inline" data-mp3="audio/underground.mp3">
+          <audio  class="cd"  src="" type="audio/mpeg"></audio>
+          <img src="art/cd.png">
+        </div>
+        <div class="playbutton playbtn d-inline" data-mp3="audio/sound3.mp3">
+          <audio  class="cd"  src="" type="audio/mpeg"></audio>
+          <img src="art/cd.png">
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+      <!-- <img src="img/logo.png" class="logo"> -->
+  </footer>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script src="js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="js/handlebars-v4.0.0.js" type="text/javascript"></script>    
+  <script id="resultados-template" type="text/x-handlebars-template">
+      {{#each albums.items}}
+          <div style="background-image:url({{images.0.url}})" data-album-id="{{id}}" class="cover">               
+          </div>     
+      {{/each}}
+  </script>
+  <script type="text/javascript" src="js/shared.js"></script>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+  <script type="text/javascript" src="js/jquery-animate-css-rotate-scale.js"></script>
+  <script type="text/javascript" src="js/jquery-css-transform.js"></script>
+  <script src="js/search.js" type="text/javascript"></script>
+  <script type="text/javascript" src="js/sonido.js"></script>
+</body>
+</html>
+
