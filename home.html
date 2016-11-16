@@ -56,7 +56,7 @@
               if (me.name) {
                 document.getElementById('saludo').innerHTML = me.name;
                 document.getElementById('foto').innerHTML = 
-                '<img src="https://graph.facebook.com/' + me.id + '/picture">';
+                '<img  style="width:100px" src="https://graph.facebook.com/' + me.id + '/picture">';
               }
             })
           } else {
@@ -73,10 +73,16 @@
     </script>
 </head>
 <body>
-  <header >
+  <header>
     <div class="container d-flex portada">
-      <img src="img/logo.png" class="logo1 img-responsive">
-    </div>
+        <img src="img/logo.png" class="logo1 img-responsive">
+       
+      </div>
+       <div class="datos">
+          BIENVENIDA <span id="saludo"></span>  
+          <a href="#" id="salir">Cerrar Sesion</a>
+          <div id="foto" ></div>
+        </div>
   </header>
   <div id="fixed-social">
     <div><a href="https://www.facebook.com/sharer/sharer.php?u=https://sacunao.github.io/soundrock/public/index.html" class="ss fixed-facebook" target="_blank"><span>Facebook</span></a></div>
@@ -87,11 +93,6 @@
   <section class="principal container">
     <div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-8">
       <div class="texto-view">
-          <div style="background-color: white">
-          Hola <span id="saludo"></span>  
-          (<a href="#" id="salir">Cerrar Sesion</a>)
-          <div id="foto" ></div>
-          </div>
           <h1 class="text-center">ARMA TU FIESTA</h1>
           <div class="m-20">
             <p class="lh">SOUNDROCK. Somos un equipo de personas comprometidas en brindar un servicio musical de calidad en eventos. Nuestra trayectoria  de más de  20 años  garantizan un servicio de calidad. Te aseguramos que tu evento tendrá un mix personalizado y perfecto para ti.</p>
